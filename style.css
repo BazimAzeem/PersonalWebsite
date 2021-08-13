@@ -1,0 +1,105 @@
+:root {
+    --darkGray: rgb(40, 40, 40);
+    --lightGray: rgb(235, 235, 235);
+    --black: rgb(20, 20, 20);
+    --white: #fff;
+    --blackTranslucent: rgb(20, 20, 20, 0.6);
+    --whiteTranslucent: rgb(255, 255, 255, 0.7);
+    --darkGreen: rgb(0, 165, 115);
+    --lightGreen: rgb(0, 236, 157);
+    --navPadding: 20px;
+}
+
+* {
+    scroll-behavior: smooth;
+    color: var(--fontColor);
+    font-family: Roboto;
+    transition: 250ms;
+}
+
+.anchor {
+    display: block;
+    position: relative;
+    top: -60px;
+    visibility: hidden;
+}
+
+body {
+    background-color: var(--bg);
+    padding-top: 100vh;
+}
+
+.light-theme {
+    --bg: var(--white);
+    --fontColor: var(--black);
+    --navBg: var(--whiteTranslucent);
+    --hoverFontColor: var(--darkGreen);
+    --contentColor: var(--lightGray);
+    --backgroundImage: url(images/trees-light.png)
+}
+
+.dark-theme {
+    --bg: var(--black);
+    --fontColor: var(--white);
+    --navBg: var(--blackTranslucent);
+    --hoverFontColor: var(--lightGreen);
+    --contentColor: var(--darkGray);
+    --backgroundImage: url(images/trees-dark.png)
+}
+
+.nav {
+    background-color: var(--navBg);
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.nav-scroll {
+    background-color: var(--bg);
+    transition: 250ms;
+}
+
+.nav-element {
+    text-transform: uppercase;
+    font-size: 16px;
+    float: left;
+    text-decoration: none;
+    margin: var(--navPadding);
+}
+
+.nav-element:hover {
+    color: var(--hoverFontColor);
+    transition: 1s;
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 0;
+}
+
+h1 {
+    color: var(--fontColor);
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+#home {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-image: var(--backgroundImage);
+    background-size: cover;
+    background-position: center center;
+}
+
+.example-content {
+    height: 200px;
+    background-color: var(--contentColor);
+    margin: 10px 10%;
+}
