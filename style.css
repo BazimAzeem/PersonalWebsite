@@ -4,10 +4,10 @@
     --black: rgb(20, 20, 20);
     --white: #fff;
     --blackTranslucent: rgb(20, 20, 20, 0.6);
-    --whiteTranslucent: rgb(255, 255, 255, 0.7);
+    --whiteTranslucent: rgb(255, 255, 255, 0.6);
     --darkGreen: rgb(0, 165, 115);
     --lightGreen: rgb(0, 236, 157);
-    --navPadding: 21px;
+    --navPadding: 20px;
 }
 
 * {
@@ -17,6 +17,16 @@
     transition: 250ms;
 }
 
+::-moz-selection {
+    color: var(--selectionColor);
+    background: var(--selectionBg);
+}
+
+::selection {
+    color: var(--selectionColor);
+    background: var(--selectionBg);
+}
+  
 .anchor {
     display: block;
     position: relative;
@@ -32,6 +42,8 @@ body {
 .light-theme {
     --bg: var(--white);
     --fontColor: var(--black);
+    --selectionBg: var(--darkGreen);
+    --selectionColor: var(--white);
     --navBg: var(--whiteTranslucent);
     --hoverFontColor: var(--darkGreen);
     --contentColor: var(--lightGray);
@@ -41,6 +53,8 @@ body {
 .dark-theme {
     --bg: var(--black);
     --fontColor: var(--white);
+    --selectionBg: var(--lightGreen);
+    --selectionColor: var(--black);
     --navBg: var(--blackTranslucent);
     --hoverFontColor: var(--lightGreen);
     --contentColor: var(--darkGray);
@@ -49,14 +63,11 @@ body {
 
 .nav {
     background-color: var(--navBg);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px);
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-.nav-scroll {
-    background-color: var(--bg);
-    transition: 250ms;
 }
 
 .nav-element {
