@@ -1,33 +1,55 @@
 :root {
-    --darkGray: rgb(40, 40, 40);
-    --lightGray: rgb(235, 235, 235);
+    /* Color constants */
+    --dark-gray: rgb(40, 40, 40);
+    --light-gray: rgb(235, 235, 235);
     --black: rgb(20, 20, 20);
     --white: #fff;
-    --blackTranslucent: rgb(20, 20, 20, 0.6);
-    --whiteTranslucent: rgb(255, 255, 255, 0.6);
-    --darkGreen: rgb(0, 165, 115);
-    --lightGreen: rgb(0, 236, 157);
-    --navPadding: 20px;
+    --black-translucent: rgb(20, 20, 20, 0.6);
+    --white-translucent: rgb(255, 255, 255, 0.6);
+    --dark-green: rgb(0, 165, 115);
+    --light-green: rgb(0, 236, 157);
+
+    /* Size Constants */
+    --nav-barPadding: 20px;
+}
+
+.light-theme {
+    --background-color: var(--white);
+    --font-color: var(--black);
+    --selection-background-color: var(--dark-green);
+    --selection-color: var(--white);
+    --glass-color: var(--white-translucent);
+    --hover-font-color: var(--dark-green);
+    --content-color: var(--light-gray);
+    --background-image: url(images/trees-light.png)
+}
+
+.dark-theme {
+    --background-color: var(--black);
+    --font-color: var(--white);
+    --selection-background-color: var(--light-green);
+    --selection-color: var(--black);
+    --glass-color: var(--black-translucent);
+    --hover-font-color: var(--light-green);
+    --content-color: var(--dark-gray);
+    --background-image: url(images/trees-dark.png)
+}
+
+.glass-effect
+{
+    background-color: var(--glass-color);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3); 
+    backdrop-filter: blur(5px);
 }
 
 * {
     scroll-behavior: smooth;
-    color: var(--fontColor);
+    color: var(--font-color);
     font-family: Roboto;
     transition: 250ms;
 }
 
-::-moz-selection {
-    color: var(--selectionColor);
-    background: var(--selectionBg);
-}
-
-::selection {
-    color: var(--selectionColor);
-    background: var(--selectionBg);
-}
-  
-.anchor {
+.nav-bar__anchor {
     display: block;
     position: relative;
     top: -60px;
@@ -35,51 +57,26 @@
 }
 
 body {
-    background-color: var(--bg);
+    background-color: var(--background-color);
     padding-top: 100vh;
 }
 
-.light-theme {
-    --bg: var(--white);
-    --fontColor: var(--black);
-    --selectionBg: var(--darkGreen);
-    --selectionColor: var(--white);
-    --navBg: var(--whiteTranslucent);
-    --hoverFontColor: var(--darkGreen);
-    --contentColor: var(--lightGray);
-    --backgroundImage: url(images/trees-light.png)
-}
-
-.dark-theme {
-    --bg: var(--black);
-    --fontColor: var(--white);
-    --selectionBg: var(--lightGreen);
-    --selectionColor: var(--black);
-    --navBg: var(--blackTranslucent);
-    --hoverFontColor: var(--lightGreen);
-    --contentColor: var(--darkGray);
-    --backgroundImage: url(images/trees-dark.png)
-}
-
-.nav {
-    background-color: var(--navBg);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3); 
-    backdrop-filter: blur(5px);
+.nav-bar {
     position: fixed;
     top: 0;
     width: 100%;
 }
 
-.nav-element {
+.nav-bar__button {
     text-transform: uppercase;
     font-size: 16px;
     float: left;
     text-decoration: none;
-    margin: var(--navPadding);
+    margin: var(--nav-barPadding);
 }
 
-.nav-element:hover {
-    color: var(--hoverFontColor);
+.nav-bar__button:hover {
+    color: var(--hover-font-color);
     transition: 1s;
 }
 
@@ -88,12 +85,7 @@ body {
     right: 0;
 }
 
-h1 {
-    color: var(--fontColor);
-    font-size: 60px;
-}
-
-h2 {
+.section-title {
     font-size: 30px;
     text-align: center;
 }
@@ -104,13 +96,18 @@ h2 {
     width: 100%;
     top: 0;
     left: 0;
-    background-image: var(--backgroundImage);
+    background-image: var(--background-image);
     background-size: cover;
     background-position: center center;
 }
 
 .example-content {
     height: 200px;
-    background-color: var(--contentColor);
+    background-color: var(--content-color);
     margin: 10px 10%;
+}
+
+::selection {
+    color: var(--selection-color);
+    background: var(--selection-background-color);
 }
