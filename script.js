@@ -1,23 +1,35 @@
 'use strict';
 
 // Theme toggle
-const theme_toggle = document.querySelector('.nav-bar__button--theme-toggle');
-theme_toggle.addEventListener('click', function() {
+const themeToggle = document.querySelector('.nav-bar__button--theme-toggle');
+themeToggle.addEventListener('click', function() {
     document.body.classList.toggle('dark-theme');
     document.body.classList.toggle('light-theme');
-
-    var className = document.body.className;
-    console.log("The theme is " + className);
 });
 
 // Menu toggle
-const menu_toggle = document.querySelector('.nav-bar__button--menu-toggle');
-menu_toggle.addEventListener('click', function() {
-    var nav_bar_links = document.querySelector('.nav-bar__links');
-    if (nav_bar_links.style.maxHeight) {
-        nav_bar_links.style.maxHeight = null;
+const menuToggle = document.querySelector('.nav-bar__button--menu-toggle');
+menuToggle.addEventListener('click', function(event) {
+    var navBarLinks = document.querySelector('.nav-bar__links');
+    if (navBarLinks.style.maxHeight) {
+        navBarLinks.style.maxHeight = null;
     } else {
-        nav_bar_links.style.maxHeight = nav_bar_links.scrollHeight + "px";
+        navBarLinks.style.maxHeight = navBarLinks.scrollHeight + "px";
     } 
-      console.log("height = " + nav_bar_links.style.maxHeight);
+
+    event.stopPropagation();
+});
+
+// Retract navigation bar when:
+// nav-bar is not clicked
+// body is clicked
+const navBar = document.querySelector('.nav-bar');
+navBar.addEventListener('click',  function (event) {
+    event.stopPropagation();
+});
+
+const body = document.body;
+body.addEventListener('click',  function () {
+    var navBarLinks = document.querySelector('.nav-bar__links');
+    navBarLinks.style.maxHeight = null;
 });
