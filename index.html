@@ -9,13 +9,16 @@
     </head>
     <body class="light-theme">
         <section id="home">
-            <div class="nav-bar glass-effect">
-                <a href="#" class="nav-bar__button">Home</a>
-                <a href="#education" class="nav-bar__button">Education</a>
-                <a href="#projects" class="nav-bar__button">Projects</a>
-                <a href="#contact" class="nav-bar__button">Contact</a>
-                <a href="javascript: void(0);" class="nav-bar__button" id="theme-toggle">Theme</a>
-            </div>
+            <ul class="nav-bar glass-effect">
+                <li><a href="javascript: void(0);" class="nav-bar__button nav-bar__button--menu-toggle">Menu</a></li>
+                <div class="nav-bar__links">
+                    <li><a href="#" class="nav-bar__button">Home</a></li>
+                    <li><a href="#education" class="nav-bar__button">Education</a></li>
+                    <li><a href="#projects" class="nav-bar__button">Projects</a></li>
+                    <li><a href="#contact" class="nav-bar__button">Contact</a></li>    
+                </div>
+                <li><a href="javascript: void(0);" class="nav-bar__button nav-bar__button--theme-toggle">Theme</a></li>
+            </ul>
         </section>
         <section class="content">
             <a class="nav-bar__anchor" id="education"></a>
