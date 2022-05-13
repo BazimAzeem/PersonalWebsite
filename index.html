@@ -24,8 +24,24 @@
         <section class="content">
             <a class="nav-bar__anchor" id="experience"></a>
             <h2 class="section-title">Experience</h2>
-            <div class="example-content"></div>
-            <div class="example-content"></div>
+            <div class="experience-accordion glass-effect">
+                <div class="experience-accordion__basic-info">
+                    <div class="experience-accordion__job">
+                        <h3 class="experience-accordion__job-title">The title of my job</h3>
+                        <h5 class="experience-accordion__job-location">The location of that job</h5>   
+                    </div>
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                    <ion-icon name="chevron-up-outline"></ion-icon>
+                </div>
+                <div class="experience-accordion__detailed-info">
+                    <h5 class="experience-accordion__dates">01/2000 - 01/3000</h5>
+                    <ul class="experience-accordion__description">
+                        <li>I did this and that</li>
+                        <li>I also did this by doing that and accomplished that</li>
+                        <li>Finally, I did that to become the CEO of this company</li>
+                    </ul>
+                </div>
+            </div>
         </section>
         <section class="content">
             <a class="nav-bar__anchor" id="education"></a>
@@ -49,5 +65,8 @@
         </section>
         <script src="script.js"></script>
         <noscript>You need to enable JavaScript to view the full site.</noscript>
+        <!-- Ionicons -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
