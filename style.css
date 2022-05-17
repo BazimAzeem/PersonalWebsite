@@ -4,13 +4,13 @@
     --light-gray: rgb(235, 235, 235);
     --black: rgb(20, 20, 20);
     --white: rgb(255, 255, 255);
-    --black-translucent: rgb(20, 20, 20, 0.6);
-    --white-translucent: rgb(255, 255, 255, 0.6);
+    --dark-gray-translucent: rgb(40, 40, 40, 0.6);
+    --light-gray-translucent: rgb(235, 235, 235, 0.6);
     --dark-green: rgb(0, 165, 115);
     --light-green: rgb(0, 236, 157);
 
     /* Size constants */
-    --nav-bar__button-margins: 12px;
+    --nav-bar__button-margins: 0.8em;
 }
 
 .light-theme {
@@ -18,7 +18,7 @@
     --font-color: var(--black);
     --selection-background-color: var(--dark-green);
     --selection-color: var(--white);
-    --glass-color: var(--white-translucent);
+    --glass-color: var(--light-gray-translucent);
     --hover-font-color: var(--dark-green);
     --content-color: var(--light-gray);
     --background-image: url(images/trees-light.png)
@@ -29,7 +29,7 @@
     --font-color: var(--white);
     --selection-background-color: var(--light-green);
     --selection-color: var(--black);
-    --glass-color: var(--black-translucent);
+    --glass-color: var(--dark-gray-translucent);
     --hover-font-color: var(--light-green);
     --content-color: var(--dark-gray);
     --background-image: url(images/trees-dark.png)
@@ -38,7 +38,7 @@
 .glass-effect
 {
     background-color: var(--glass-color);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.2); 
     backdrop-filter: blur(5px);
 }
 
@@ -47,11 +47,12 @@
     color: var(--font-color);
     font-family: 'Roboto', sans-serif;
     transition: 250ms;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--background-color);
-    padding-top: 100vh;
+    padding: 100vh 0.8rem 0;
 }
 
 /* Navigation bar */
@@ -60,13 +61,14 @@ body {
     margin: 0;
     padding: 0;
     position: fixed;
+    z-index: 1000;
     top: 0;
     width: 100%;
 }
 
 .nav-bar__button {
     text-transform: uppercase;
-    font-size: 16px;
+    font-size: 1rem;
     float: left;
     text-decoration: none;
     margin: var(--nav-bar__button-margins);
@@ -90,7 +92,7 @@ body {
 .nav-bar__anchor {
     display: block;
     position: relative;
-    top: -60px;
+    top: -5em;
     visibility: hidden;
 }
 
@@ -114,16 +116,39 @@ body {
 
 /* Experience accordion */
 .experience-accordion {
-    max-width: 700px;
+    max-width: 50rem;
     margin: 0 auto;
-    padding: 0px 8px;
-    border-radius: 3px;
+    border-radius: 0.25em;
+    padding: 1em;
 }
 
-/* .experience-accordion__ */
+.experience-accordion__basic-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.experience-accordion__job-title {
+    margin: 0
+}
+
+.experience-accordion__job-location {
+    margin: 0;
+}
+
+.experience-accordion__dropdown-icon {
+    background-color: pink;
+}
+
+.experience-accordion__detailed-info {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
 
 .section-title {
-    font-size: 30px;
+    font-size: 1.5rem;
     text-align: center;
 }
 

@@ -33,3 +33,16 @@ body.addEventListener('click',  function () {
     var navBarLinks = document.querySelector('.nav-bar__links');
     navBarLinks.style.maxHeight = null;
 });
+
+// Accordion toggle
+const accordion = document.querySelector('.experience-accordion');
+accordion.addEventListener('click', function(event) {
+    var detailedInfo = document.querySelector('.experience-accordion__detailed-info');
+    if (detailedInfo.style.maxHeight) {
+        detailedInfo.style.maxHeight = null;
+    } else {
+        detailedInfo.style.maxHeight = detailedInfo.scrollHeight + "px";
+    } 
+
+    event.stopPropagation();
+});
