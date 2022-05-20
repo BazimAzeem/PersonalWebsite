@@ -35,14 +35,19 @@ body.addEventListener('click',  function () {
 });
 
 // Accordion toggle
-const accordion = document.querySelector('.experience-accordion');
-accordion.addEventListener('click', function(event) {
-    var detailedInfo = document.querySelector('.experience-accordion__detailed-info');
-    if (detailedInfo.style.maxHeight) {
-        detailedInfo.style.maxHeight = null;
-    } else {
-        detailedInfo.style.maxHeight = detailedInfo.scrollHeight + "px";
-    } 
-
-    event.stopPropagation();
-});
+var accordion = document.querySelectorAll('.experience-accordion');
+for (var i = 0; i < accordion.length; i++)
+{
+    accordion[i].addEventListener('click', function() {
+        var detailedInfo = this.querySelector('.experience-accordion__detailed-info');
+        var dropdownIcon = this.querySelector('.experience-accordion__dropdown-icon');
+        if (detailedInfo.style.maxHeight) {
+            detailedInfo.style.maxHeight = null;
+            dropdownIcon.style.transform = "none";
+    
+        } else {
+            detailedInfo.style.maxHeight = detailedInfo.scrollHeight + "px";
+            dropdownIcon.style.transform = "scaleY(-1)";
+        }
+    });    
+}

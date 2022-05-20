@@ -8,9 +8,6 @@
     --light-gray-translucent: rgb(235, 235, 235, 0.6);
     --dark-green: rgb(0, 165, 115);
     --light-green: rgb(0, 236, 157);
-
-    /* Size constants */
-    --nav-bar__button-margins: 0.8em;
 }
 
 .light-theme {
@@ -71,7 +68,7 @@ body {
     font-size: 1rem;
     float: left;
     text-decoration: none;
-    margin: var(--nav-bar__button-margins);
+    margin: .8em;
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -117,9 +114,11 @@ body {
 /* Experience accordion */
 .experience-accordion {
     max-width: 50rem;
-    margin: 0 auto;
+    margin: 1em auto;
     border-radius: 0.25em;
     padding: 1em;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
 }
 
 .experience-accordion__basic-info {
@@ -130,7 +129,7 @@ body {
 }
 
 .experience-accordion__job-title {
-    margin: 0
+    margin: 0;
 }
 
 .experience-accordion__job-location {
@@ -138,7 +137,7 @@ body {
 }
 
 .experience-accordion__dropdown-icon {
-    background-color: pink;
+    /* background-color: pink; */
 }
 
 .experience-accordion__detailed-info {
@@ -147,6 +146,17 @@ body {
     transition: max-height 0.2s ease-out;
 }
 
+.experience-accordion__dates {
+    margin: 0;
+}
+
+.experience-accordion__description {
+    list-style: circle;
+    margin: 0;
+    padding: 0;
+    padding-left: 1.2em;
+}
+  
 .section-title {
     font-size: 1.5rem;
     text-align: center;
