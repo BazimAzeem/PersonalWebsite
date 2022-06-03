@@ -18,7 +18,8 @@
     --glass-color: var(--light-gray-translucent);
     --hover-font-color: var(--dark-green);
     --content-color: var(--light-gray);
-    --background-image: url(images/trees-light.png)
+    --background-image: url(images/trees-light.png);
+    --accent-color: var(--dark-green);
 }
 
 .dark-theme {
@@ -29,7 +30,8 @@
     --glass-color: var(--dark-gray-translucent);
     --hover-font-color: var(--light-green);
     --content-color: var(--dark-gray);
-    --background-image: url(images/trees-dark.png)
+    --background-image: url(images/trees-dark.png);
+    --accent-color: var(--light-green);
 }
 
 .glass-effect
@@ -117,8 +119,6 @@ body {
     margin: 1em auto;
     border-radius: 0.25em;
     padding: 1em;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
 }
 
 .experience-accordion__basic-info {
@@ -134,6 +134,8 @@ body {
 
 .experience-accordion__job-location {
     margin: 0;
+    margin-top: 0.25em;
+    color: var(--accent-color);
 }
 
 .experience-accordion__dropdown-icon {
